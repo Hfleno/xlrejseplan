@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/views/Home.vue'
+import Home from './views/Home.vue'
+import Details from './views/Details.vue'
+import About from './views/About.vue'
 
 Vue.use(Router)
 
@@ -12,10 +14,14 @@ export default new Router({
       component: Home,
     },
     {
+      path: '/about',
+      name: 'about',
+      component: About,
+    },
+    {
       path: '/details',
       name: 'details',
-      component: () =>
-        import(/* webpackChunkName: "details" */ '@/views/Details.vue'),
+      component: Details,
       props: true,
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
